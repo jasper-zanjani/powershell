@@ -1,0 +1,2 @@
+1..24 | ForEach-Object {
+    Invoke-WebRequest -OutFile ("TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v" -f $_) ("https://securedownloads.teach12.com/anon.eastbaymedia-drm/courses/3466/m4v/TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v?userid=$USERID&orderid=$ORDERID&courseid=$COURSEID&FName=TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity" -f $_)}
