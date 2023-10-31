@@ -1,25 +1,8 @@
 Variables are accessed by prefixing the identifier with **$**.
 
+#### Hash tables
 
-
-[**Automatic variables**](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3) are variables that store state information for PowerShell and are created and maintained by Powershell (**$$**, **$\_**, **$PSVersionTable**, **$IsLinux**, etc) are PowerShell-specific.
-
-Traditional Windows environment variables are accessed through the **Env** virtual drive using syntax like **$Env:APPDATA**, **$Env:USERNAME**, etc.
-
-Data types are placed in brackets immediately preceding the variable name when declaring variables.
-
-```powershell title="Typing"
-[double]$Price
-[int]$Quantity
-[string]$Description
-```
-
-Data can be cast by placing the data type in brackets immediately preceding the literal.
-
-```powershell title="Casting"
-$Number = [int]'04'
-$FailedCast = [int]'Hello'
-```
+[**Hash tables**](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.3) are also known as dictionaries or associative arrays in other languages and are composed of key-value pairs.
 
 ```powershell title="Hash tables"
 $fruit = @{
@@ -31,7 +14,7 @@ $fruit = @{
 # Hash tables can be declared inline by placing semicolons between each key-value pair
 $fruit = @{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
 
-# Use methods to construct hash tables
+# Use the Add method to construct hash tables
 $fruit = @{}
 $fruit.Add('Apple','red')
 $fruit.Add('Orange','orange')
@@ -49,6 +32,8 @@ $fruit.Remove('Apple')
 $fruit = [ordered]@{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
 $fruit.GetType().Name # => OrderedDictionary
 ```
+
+#### Here-strings
 
 Multiline strings are called [**Here-strings**](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.3#here-strings) and appear between **@"** and **"@**:
 
@@ -68,4 +53,13 @@ strawberry
 $fruit.Split() |% { Write-Host "$_" }
 ```
 
-**Template strings**
+#### Environmental variables
+
+[**Automatic variables**](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3) are variables that store state information for PowerShell and are created and maintained by Powershell (**$$**, **$\_**, **$PSVersionTable**, **$IsLinux**, etc) are PowerShell-specific.
+
+Traditional Windows environment variables are accessed through the **Env** virtual drive using syntax like **$Env:APPDATA**, **$Env:USERNAME**, etc.
+
+#### Writing data to disk
+
+PowerShell object data can be preserved on disk by using [**Export-Clixml**](https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files/#save-rich-object-data-with-export-clixml) and imported again using **Import-Clixml**.
+

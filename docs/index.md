@@ -3,18 +3,21 @@
 
 ## Development tasks
 
+--8<-- "includes/functions.md"
 
-#### Functions
+--8<-- "includes/parameters.md"
+
+### Typing
 :   
-    --8<-- "includes/functions.md"
+    --8<-- "includes/typing.md"
 
 
-#### Control flow
+### Control flow
 :   
     --8<-- "includes/control.md"
 
 
-#### Variables
+### Variables
 :   
     --8<-- "includes/variables.md"
 
@@ -32,6 +35,10 @@
 :   
     --8<-- "includes/documentation.md"
 
+
+#### Error handling
+:   
+    --8<-- "includes/error.md"
 
 #### Unit testing
 :   
@@ -70,7 +77,7 @@
     A module manifest file is used to create more complex modules with multiple files.
     
     ```powershell
-    New-Module Manifest
+    New-ModuleManifest
     ```
 
 ## System administration tasks
@@ -83,9 +90,10 @@
 #### Profile
 :   
     Similar to a bashrc file, PowerShell has various profiles which can contain custom variable and function definitions, accessible through automatic variables like **$PROFILE**, etc.
-    These are loaded using syntax similar to that of bash:
+    These are loaded using syntax similar to that of bash.
 
-    ```powershell title="Reload profile"
+    ```powershell
+    # Reload profile
     . $PROFILE
     ```
 
@@ -109,7 +117,8 @@
 #### Scheduled task
 :   
 
-    ```powershell title="Schedule SSH server on WSL to start on system start"
+    ```powershell
+    # Schedule SSH server on WSL to start on system start
     $action = New-ScheduledTaskAction -Execute C:\WINDOWS\System32\bash.exe -Argument '-c sudo service ssh start'
     $trigger = New-ScheduledTaskTrigger -AtLogon
 
