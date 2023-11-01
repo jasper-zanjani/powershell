@@ -185,21 +185,6 @@
     --8<-- "includes/winforms.ps1"
     ```
 
-## Active Directory administration tasks
-
-```powershell title="Common AD administration tasks"
-# Add a user to a group
-Add-ADGroupMember -Identity $group -Members $user1,$user2
-
-# Search Active Directory
-Get-ADUser -Filter { (SamAccountName -like "*CA0*") } -Properties Displayname,SamAccountName,Enabled
-```
-
-```powershell title="Create new domain controller"
---8<-- "includes/dc.ps1"
-```
-
-
 ## Hyper-V administration tasks
 
 ```powershell title="Common tasks"

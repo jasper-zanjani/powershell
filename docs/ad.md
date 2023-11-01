@@ -2,6 +2,22 @@
 
 The Active Directory PowerShell module is used for managing Active Directory principals.
 
+#### Administration
+
+    ```powershell title="Common AD administration tasks"
+    # Add a user to a group
+    Add-ADGroupMember -Identity $group -Members $user1,$user2
+
+    # Search Active Directory
+    Get-ADUser -Filter { (SamAccountName -like "*CA0*") } -Properties Displayname,SamAccountName,Enabled
+    ```
+
+#### Set new password
+:   
+    ```powershell
+    --8<-- "includes/tasks/ad-reset-password.ps1"
+    ```
+
 #### Search for users
 :   
 
@@ -25,10 +41,10 @@ The Active Directory PowerShell module is used for managing Active Directory pri
     $ite3 = $it |? -FilterScript {"M365EnterpriseE3_License" -in (Get-ADPrincipalGroupMembership $_).name}
     ```
 
-#### Set new password
-:   
-    ```powershell
-    --8<-- "includes/tasks/ad-reset-password.ps1"
+#### Create new DC
+
+    ```powershell title="Create new domain controller"
+    --8<-- "includes/dc.ps1"
     ```
 
 
