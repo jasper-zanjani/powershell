@@ -25,7 +25,11 @@ The Active Directory PowerShell module is used for managing Active Directory pri
     $ite3 = $it |? -FilterScript {"M365EnterpriseE3_License" -in (Get-ADPrincipalGroupMembership $_).name}
     ```
 
-
+#### Set new password
+:   
+    ```powershell
+    --8<-- "includes/tasks/ad-reset-password.ps1"
+    ```
 
 
 ??? info "ADSI"
