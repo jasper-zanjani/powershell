@@ -114,6 +114,10 @@
     $lxvms = $vms | where Name -Like *VL*
     ```
 
+    ```powershell
+    --8<-- "includes/cmdlets/Select-String.ps1
+    ```
+
 #### Scheduled task
 :   
 
