@@ -101,7 +101,7 @@
 :   
     Filtering results can be done with 5 commands:
 
-    - **Where-Object** (aliased to **where** and **?**): the most commonly used such command
+    - [ **Where-Object** ](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.3) (aliased to **where** and **?**): the most commonly used such command
     - **Select-Object** (**sced**) to specify specific columns of information to be displayed
     - **Select-String** (**sls**)
     - **ForEach-Object** (**foreach** and **%**) There are two different ways to construct a ForEach-Object statement:
@@ -299,4 +299,6 @@ Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 
 
 
---8<-- "includes/links.md"
+/--8<-- "includes/links.md"
+
+
